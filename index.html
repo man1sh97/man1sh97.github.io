@@ -1,185 +1,783 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
-<style>
-    .affiliation {
-        color: #666;
-        margin: 3px 0;
-    }
-</style>    
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manish Patel | Physics</title>
+```
+<title>Manish Patel | Physics</title>
 
-    <!--<img src="manish_pic.jpeg"
-     alt="Manish Patel"
-     style="width:160px; height:160px; object-fit:cover; border-radius:50%;">-->
-    
-    <style>
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 28px;
+        line-height: 1.65;
+        color: #222;
+        background: #fff;
+    }
+
+    /* ---------- Navigation ---------- */
+
+    nav {
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.96);
+        border-bottom: 1px solid #eee;
+        z-index: 1000;
+        margin-bottom: 55px;
+    }
+
+    .nav-inner {
+        max-width: 1000px;
+        margin: auto;
+        padding: 14px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-name {
+        font-weight: 600;
+        color: #222;
+    }
+
+    nav a {
+        color: #555;
+        text-decoration: none;
+        margin-left: 22px;
+        font-size: 14px;
+    }
+
+    nav a:hover {
+        color: #1565c0;
+    }
+
+    /* ---------- General ---------- */
+
+    section {
+        scroll-margin-top: 80px;
+        margin-bottom: 65px;
+    }
+
+    h1 {
+        font-size: 38px;
+        margin: 0 0 4px 0;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 25px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+
+    p {
+        margin-top: 0;
+    }
+
+    a {
+        color: #1565c0;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: 70px;
+    }
+
+    .hero-text {
+        flex: 1;
+    }
+
+    .subtitle {
+        color: #555;
+        font-size: 18px;
+        margin: 2px 0;
+    }
+
+    .affiliation {
+        color: #666;
+        margin: 1px 0;
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .research-title {
+        margin-top: 20px;
+        color: #444;
+        font-size: 16px;
+    }
+
+    .profile-photo {
+        width: 165px;
+        height: 165px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .links {
+        margin-top: 18px;
+    }
+
+    .links a {
+        margin-right: 16px;
+        font-size: 14px;
+    }
+
+    /* ---------- Research ---------- */
+
+    .research-intro {
+        font-size: 16px;
+        color: #444;
+        max-width: 900px;
+    }
+
+    .research-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        margin-top: 30px;
+    }
+
+    .research-card {
+        padding: 20px 22px;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        background: #fafafa;
+    }
+
+    .research-card h3 {
+        margin-top: 0;
+    }
+
+    .research-card p {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    /* ---------- Research visual ---------- */
+
+    .research-visual {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        margin-top: 35px;
+    }
+
+    .research-visual-text {
+        flex: 1;
+    }
+
+    .research-video {
+        width: 230px;
+        border-radius: 7px;
+    }
+
+    /* ---------- Publications ---------- */
+
+    .publication {
+        margin-bottom: 23px;
+    }
+
+    .publication-title {
+        font-weight: 600;
+    }
+
+    .publication-authors {
+        color: #555;
+        font-size: 15px;
+    }
+
+    .publication-journal {
+        color: #444;
+        font-size: 14px;
+    }
+
+    .publication-links {
+        font-size: 14px;
+    }
+
+    /* ---------- CV ---------- */
+
+    .cv-button {
+        display: inline-block;
+        padding: 9px 18px;
+        border: 1px solid #1565c0;
+        border-radius: 5px;
+        color: #1565c0;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .cv-button:hover {
+        background: #1565c0;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* ---------- Contact ---------- */
+
+    .contact {
+        color: #555;
+    }
+
+    /* ---------- Footer ---------- */
+
+    footer {
+        border-top: 1px solid #eee;
+        padding: 25px 0 35px;
+        margin-top: 70px;
+        color: #888;
+        font-size: 13px;
+    }
+
+    /* ---------- Mobile ---------- */
+
+    @media (max-width: 700px) {
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-            color: #222;
+            padding: 0 18px;
+        }
+
+        nav {
+            margin-bottom: 35px;
+        }
+
+        .nav-inner {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        nav a {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .hero {
+            flex-direction: column-reverse;
+            text-align: center;
+            gap: 25px;
+        }
+
+        .profile-photo {
+            width: 140px;
+            height: 140px;
         }
 
         h1 {
-            margin-bottom: 5px;
+            font-size: 32px;
         }
 
-        h2 {
-            margin-top: 40px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+        .research-grid {
+            grid-template-columns: 1fr;
         }
 
-        .subtitle {
-            color: #666;
+        .research-visual {
+            flex-direction: column;
         }
 
-        a {
-            color: #1565c0;
-            text-decoration: none;
+        .research-video {
+            width: 100%;
+            max-width: 300px;
         }
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+</style>
+```
+
 </head>
 
 <body>
 
-    <div style="display: flex; justify-content: space-between; align-items: center;">
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+    <div class="nav-inner">
+
+```
+    <div class="nav-name">
+        Manish Patel
+    </div>
 
     <div>
-        <h1>Manish Patel</h1>
-        <p class="affiliation">PhD Scholar</p>
-        <p class="affiliation">Institute of Physics, Bhubaneswar</p>
-        <p class="affiliation">Homi Bhabha National Institute, Mumbai</p>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+    </div>
+
 </div>
+```
+
+</nav>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+```
+<div class="hero">
+
+    <div class="hero-text">
+
+        <h1>Manish Patel</h1>
+
+        <p class="subtitle">
+            PhD Scholar in Physics
+        </p>
+
+        <p class="affiliation">
+            Institute of Physics, Bhubaneswar
+        </p>
+
+        <p class="affiliation">
+            Homi Bhabha National Institute, Mumbai
+        </p>
+
+        <p class="research-title">
+            <strong>Research:</strong>
+            Active Matter · Nonequilibrium Statistical Physics ·
+            Stochastic Dynamics
+        </p>
+
+        <div class="links">
+
+            <a href="mailto:manish.patel@iopb.res.in">
+                Email
+            </a>
+
+            <a href="https://orcid.org/0009-0000-3323-0492"
+               target="_blank">
+                ORCID
+            </a>
+
+            <a href="https://scholar.google.com/"
+               target="_blank">
+                Google Scholar
+            </a>
+
+            <a href="https://arxiv.org/"
+               target="_blank">
+                arXiv
+            </a>
+
+        </div>
+
+    </div>
+
 
     <img src="manish_pic.jpeg"
          alt="Manish Patel"
-         style="width:160px; height:160px; object-fit:cover; border-radius:50%;">
+         class="profile-photo">
 
 </div>
-    
 
-    <p>
-        I work on stochastic dynamics, active matter, and
-        nonequilibrium statistical physics, with a particular
-        interest in the dynamics and thermodynamics of active particles.
-    </p>
 
-    <h2>Research</h2>
+<p>
+    I work on stochastic dynamics, active matter, and
+    nonequilibrium statistical physics, with a particular
+    interest in the dynamics and thermodynamics of active particles.
+    My research combines analytical theory, stochastic dynamics,
+    numerical simulations, and physically motivated modeling to
+    understand transport, fluctuations, and dynamical transitions
+    in systems far from equilibrium.
+</p>
+```
 
-<div style="display:flex; align-items:center; gap:30px;">
+</section>
 
-    <div>
+<!-- ================= RESEARCH ================= -->
+
+<section id="research">
+
+```
+<h2>Research</h2>
+
+<p class="research-intro">
+    A central theme of my research is to understand how activity,
+    inertia, interactions, confinement, and competing dynamical
+    timescales shape the behavior of nonequilibrium systems.
+    I am particularly interested in phenomena that have no direct
+    equilibrium analogue and in developing analytical and
+    computational approaches to describe them quantitatively.
+</p>
+
+
+<div class="research-grid">
+
+    <div class="research-card">
+
+        <h3>01 · Active Matter</h3>
+
         <p>
-            A central theme of my research is to understand the physical mechanisms underlying transport, fluctuations, and dynamical transitions in systems far from equilibrium. I am particularly interested in the interplay of activity, inertia, confinement, interactions, and competing dynamical timescales, and in how these ingredients give rise to phenomena that have no direct equilibrium analogue. I combine analytical theory, stochastic dynamics, and physically motivated modeling to develop quantitative descriptions of such complex nonequilibrium behavior.
-
-My work has focused on developing analytical approaches to characterize non-Gaussian fluctuations, re-entrant phenomena, anomalous and non-monotonic diffusion, and crossovers between distinct dynamical regimes. I am also interested in how interactions and non-reciprocal couplings modify the dynamics and transport properties of active systems. These questions provide a natural connection to biological physics, where persistent motion, fluctuations, non-reciprocal interactions, and nonequilibrium driving are intrinsic features of living systems.
-
+            Dynamics and transport of active Brownian particles,
+            active chains, and interacting active systems, with
+            emphasis on activity-induced transitions and anomalous
+            transport.
         </p>
+
     </div>
 
-    <video width="225" autoplay loop muted playsinline>
-    <source src="active_particles.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-    
+
+    <div class="research-card">
+
+        <h3>02 · Stochastic Dynamics</h3>
+
+        <p>
+            Exact and analytical approaches to stochastic
+            nonequilibrium dynamics, including higher-order moments,
+            non-Gaussian fluctuations, and dynamical crossovers.
+        </p>
+
+    </div>
+
+
+    <div class="research-card">
+
+        <h3>03 · Inertia & Resetting</h3>
+
+        <p>
+            Understanding how inertia and stochastic resetting
+            control transport, localization, and steady-state
+            properties of active particles.
+        </p>
+
+    </div>
+
+
+    <div class="research-card">
+
+        <h3>04 · Nonequilibrium Transport</h3>
+
+        <p>
+            Diffusion, non-reciprocal interactions, and competing
+            active and thermal driving in systems far from equilibrium,
+            with connections to biological and soft-matter systems.
+        </p>
+
+    </div>
 
 </div>
 
-    
-<h2>Publications</h2>
 
-<ol>
+<div class="research-visual">
 
-    <li>
-        <em><strong>Non-monotonic diffusion from nonequilibrium driving</strong></em><br>
-        <strong>Manish Patel</strong>, Ritwick Sarkar, Urna Basu, Debasish Chaudhuri<br>
-        <a href="https://arxiv.org/abs/2607.25902" target="_blank">[arXiv:2607.25902]</a>
-        (2026)
-    </li>
+    <div class="research-visual-text">
 
-    <li>
-        <em><strong>Crossover dynamics and non-Gaussian fluctuations in inertial active chains</strong></em><br>
-        <strong>Manish Patel</strong>, Subhajit Paul, Debasish Chaudhuri<br>
-        <a href="https://doi.org/10.1063/5.0321684" target="_blank">
-            <em>J. Chem. Phys.</em> <strong>164</strong>, 134110
+        <p>
+            My work spans single-particle dynamics to interacting
+            many-body systems, with an emphasis on identifying the
+            physical mechanisms responsible for emergent transport
+            and fluctuations.
+        </p>
+
+        <p>
+            I am also interested in extending these ideas toward
+            biological physics, particularly cell and tissue dynamics,
+            where persistent motion, fluctuations, non-reciprocal
+            interactions, and nonequilibrium driving are intrinsic
+            features of living systems.
+        </p>
+
+    </div>
+
+
+    <video class="research-video"
+           autoplay
+           loop
+           muted
+           playsinline>
+
+        <source src="active_particles.mp4"
+                type="video/mp4">
+
+        Your browser does not support the video tag.
+
+    </video>
+
+</div>
+```
+
+</section>
+
+<!-- ================= PUBLICATIONS ================= -->
+
+<section id="publications">
+
+```
+<h2>Selected Publications</h2>
+
+
+<div class="publication">
+
+    <div class="publication-title">
+        <em>Non-monotonic diffusion from nonequilibrium driving</em>
+    </div>
+
+    <div class="publication-authors">
+        <strong>Manish Patel</strong>, Ritwick Sarkar,
+        Urna Basu, Debasish Chaudhuri
+    </div>
+
+    <div class="publication-links">
+        <a href="https://arxiv.org/abs/2607.25902"
+           target="_blank">
+            arXiv:2607.25902
         </a>
-        (2026)
-    </li>
+        · 2026
+    </div>
 
-    <li>
-        <em><strong>Controlling inertial active Brownian motion via stochastic resetting</strong></em><br>
-        <strong>Manish Patel</strong>, Amir Shee<br>
-        <a href="https://arxiv.org/abs/2602.21134" target="_blank">[arXiv:2602.21134]</a>
-        (2026)
-    </li>
+</div>
 
-    <li>
-        <em><strong>Interplay of activity and non-reciprocity in tracer dynamics:
-        From non-equilibrium fluctuation-dissipation to giant diffusion</strong></em><br>
-        Subhajit Paul, <strong>Manish Patel</strong>, Debasish Chaudhuri<br>
-        <a href="https://arxiv.org/abs/2601.03591" target="_blank">[arXiv:2601.03591]</a>
-        (2026)
-    </li>
 
-    <li>
-        <em><strong>Dynamical metastability and re-entrant localization of trapped active
-        elements with speed and orientation fluctuations</strong></em><br>
-        <strong>Manish Patel</strong>, Amir Shee, Debasish Chaudhuri<br>
-        <a href="https://doi.org/10.1103/PhysRevResearch.7.013126" target="_blank">
-            <em>Phys. Rev. Research</em> <strong>7</strong>, 013126
+<div class="publication">
+
+    <div class="publication-title">
+        <em>
+            Crossover dynamics and non-Gaussian fluctuations
+            in inertial active chains
+        </em>
+    </div>
+
+    <div class="publication-authors">
+        <strong>Manish Patel</strong>, Subhajit Paul,
+        Debasish Chaudhuri
+    </div>
+
+    <div class="publication-journal">
+        <em>J. Chem. Phys.</em>
+        <strong>164</strong>, 134110 (2026)
+    </div>
+
+    <div class="publication-links">
+        <a href="https://doi.org/10.1063/5.0321684"
+           target="_blank">
+            DOI
         </a>
-        (2025)
-    </li>
+    </div>
 
-    <li>
-        <em><strong>Exact moments for trapped active particles: inertial impact on
-        steady-state properties and re-entrance</strong></em><br>
-        <strong>Manish Patel</strong>, Debasish Chaudhuri<br>
-        <a href="https://doi.org/10.1088/1367-2630/ad6349" target="_blank">
-            <em>New J. Phys.</em> <strong>26</strong>, 073048
+</div>
+
+
+<div class="publication">
+
+    <div class="publication-title">
+        <em>
+            Controlling inertial active Brownian motion
+            via stochastic resetting
+        </em>
+    </div>
+
+    <div class="publication-authors">
+        <strong>Manish Patel</strong>, Amir Shee
+    </div>
+
+    <div class="publication-links">
+        <a href="https://arxiv.org/abs/2602.21134"
+           target="_blank">
+            arXiv:2602.21134
         </a>
-        (2024)
-    </li>
+        · 2026
+    </div>
 
-    <li>
-        <em><strong>Exact moments and re-entrant transitions in the inertial dynamics
-        of active Brownian particles</strong></em><br>
-        <strong>Manish Patel</strong>, Debasish Chaudhuri<br>
-        <a href="https://doi.org/10.1088/1367-2630/ad1538" target="_blank">
-            <em>New J. Phys.</em> <strong>25</strong>, 123048
+</div>
+
+
+<div class="publication">
+
+    <div class="publication-title">
+        <em>
+            Interplay of activity and non-reciprocity in
+            tracer dynamics: From non-equilibrium
+            fluctuation-dissipation to giant diffusion
+        </em>
+    </div>
+
+    <div class="publication-authors">
+        Subhajit Paul, <strong>Manish Patel</strong>,
+        Debasish Chaudhuri
+    </div>
+
+    <div class="publication-links">
+        <a href="https://arxiv.org/abs/2601.03591"
+           target="_blank">
+            arXiv:2601.03591
         </a>
-        (2023)
-    </li>
+        · 2026
+    </div>
 
-</ol>
+</div>
 
 
+<div class="publication">
 
-    <h2>CV</h2>
+    <div class="publication-title">
+        <em>
+            Dynamical metastability and re-entrant localization
+            of trapped active elements with speed and
+            orientation fluctuations
+        </em>
+    </div>
 
-    <p>
-        <a href="cv_academic.pdf">Download my CV</a>
-    </p>
+    <div class="publication-authors">
+        <strong>Manish Patel</strong>, Amir Shee,
+        Debasish Chaudhuri
+    </div>
 
-    <h2>Contact</h2>
+    <div class="publication-journal">
+        <em>Phys. Rev. Research</em>
+        <strong>7</strong>, 013126 (2025)
+    </div>
 
-    <p>
-        Email: manish.patel@iopb.res.in
-    </p>
+    <div class="publication-links">
+        <a href="https://doi.org/10.1103/PhysRevResearch.7.013126"
+           target="_blank">
+            DOI
+        </a>
+    </div>
+
+</div>
+
+
+<div class="publication">
+
+    <div class="publication-title">
+        <em>
+            Exact moments for trapped active particles:
+            inertial impact on steady-state properties
+            and re-entrance
+        </em>
+    </div>
+
+    <div class="publication-authors">
+        <strong>Manish Patel</strong>, Debasish Chaudhuri
+    </div>
+
+    <div class="publication-journal">
+        <em>New J. Phys.</em>
+        <strong>26</strong>, 073048 (2024)
+    </div>
+
+    <div class="publication-links">
+        <a href="https://doi.org/10.1088/1367-2630/ad6349"
+           target="_blank">
+            DOI
+        </a>
+    </div>
+
+</div>
+
+
+<div class="publication">
+
+    <div class="publication-title">
+        <em>
+            Exact moments and re-entrant transitions in
+            the inertial dynamics of active Brownian particles
+        </em>
+    </div>
+
+    <div class="publication-authors">
+        <strong>Manish Patel</strong>, Debasish Chaudhuri
+    </div>
+
+    <div class="publication-journal">
+        <em>New J. Phys.</em>
+        <strong>25</strong>, 123048 (2023)
+    </div>
+
+    <div class="publication-links">
+        <a href="https://doi.org/10.1088/1367-2630/ad1538"
+           target="_blank">
+            DOI
+        </a>
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ================= CV ================= -->
+
+<section id="cv">
+
+```
+<h2>Curriculum Vitae</h2>
+
+<p>
+    For a complete overview of my academic background,
+    research experience, publications, and presentations:
+</p>
+
+<a class="cv-button"
+   href="cv_academic.pdf">
+    View / Download CV
+</a>
+```
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+```
+<h2>Contact</h2>
+
+<p class="contact">
+    Institute of Physics, Bhubaneswar
+</p>
+
+<p class="contact">
+    Email:
+    <a href="mailto:manish.patel@iopb.res.in">
+        manish.patel@iopb.res.in
+    </a>
+</p>
+```
+
+</section>
+
+<footer>
+
+```
+© 2026 Manish Patel · Physics
+```
+
+</footer>
 
 </body>
-
 </html>
