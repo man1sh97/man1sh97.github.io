@@ -28,6 +28,113 @@
         color: #222;
         background: #fff;
     }
+    /* ---------- Theme Toggle ---------- */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle {
+    margin-left: 18px;
+    border: 1px solid #ddd;
+    background: transparent;
+    color: #444;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle:hover {
+    background: #f2f2f2;
+}
+
+
+/* ---------- Dark Theme ---------- */
+
+body.dark {
+    background: #121212;
+    color: #e6e6e6;
+}
+
+body.dark nav {
+    background: rgba(18,18,18,0.96);
+    border-bottom-color: #333;
+}
+
+body.dark .nav-name {
+    color: #e6e6e6;
+}
+
+body.dark nav a {
+    color: #aaa;
+}
+
+body.dark nav a:hover {
+    color: #6ea8ff;
+}
+
+body.dark .subtitle,
+body.dark .affiliation,
+body.dark .research-title {
+    color: #aaa;
+}
+
+body.dark h2 {
+    border-bottom-color: #333;
+}
+
+body.dark a {
+    color: #6ea8ff;
+}
+
+body.dark .research-intro {
+    color: #ccc;
+}
+
+body.dark .research-card {
+    background: #1b1b1b;
+    border-color: #333;
+}
+
+body.dark .research-card p {
+    color: #aaa;
+}
+
+body.dark .publication-authors,
+body.dark .publication-journal,
+body.dark .contact {
+    color: #aaa;
+}
+
+body.dark .cv-button {
+    border-color: #6ea8ff;
+    color: #6ea8ff;
+}
+
+body.dark .cv-button:hover {
+    background: #6ea8ff;
+    color: #121212;
+}
+
+body.dark footer {
+    border-top-color: #333;
+    color: #777;
+}
+
+body.dark #theme-toggle {
+    border-color: #444;
+    color: #eee;
+}
+
+body.dark #theme-toggle:hover {
+    background: #292929;
+}
 
     /* ---------- Navigation ---------- */
     <nav>
