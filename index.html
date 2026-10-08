@@ -1,1072 +1,1100 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Manish Patel | PhD Scholar</title>
 
-<title>Manish Patel | Physics</title>
+    <style>
 
-<style>
+        /* =========================
+           GENERAL
+        ========================== */
 
-    * {
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    <script>
-
-    const toggle = document.getElementById("theme-toggle");
-
-    // Load saved theme
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark");
-    }
-
-    toggle.addEventListener("click", function () {
-
-        document.body.classList.toggle("dark");
-
-        if (document.body.classList.contains("dark")) {
-            localStorage.setItem("theme", "dark");
-        } else {
-            localStorage.setItem("theme", "light");
+        html {
+            scroll-behavior: smooth;
         }
-
-    });
-
-</script>
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 28px;
-        line-height: 1.65;
-        color: #222;
-        background: #fff;
-    }
-    /* ---------- Theme Toggle ---------- */
-
-#theme-toggle {
-    position: relative;
-    width: 42px;
-    height: 42px;
-    margin-left: 18px;
-    padding: 0;
-
-    border: 1px solid #ddd;
-    border-radius: 50%;
-
-    background: #fff;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition:
-        background 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease;
-}
-
-#theme-toggle:hover {
-    transform: rotate(12deg);
-    background: #f5f5f5;
-}
-
-
-/* ---------- Sun ---------- */
-
-.sun-icon {
-    position: absolute;
-
-    width: 16px;
-    height: 16px;
-
-    border-radius: 50%;
-    background: #555;
-
-    transition:
-        transform 0.4s ease,
-        opacity 0.3s ease;
-}
-
-.sun-icon::before {
-    content: "";
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    width: 26px;
-    height: 26px;
-
-    transform: translate(-50%, -50%);
-
-    background:
-        linear-gradient(#555, #555) center top / 1px 5px no-repeat,
-        linear-gradient(#555, #555) center bottom / 1px 5px no-repeat,
-        linear-gradient(#555, #555) left center / 5px 1px no-repeat,
-        linear-gradient(#555, #555) right center / 5px 1px no-repeat;
-
-    border-radius: 50%;
-}
-
-
-/* ---------- Moon ---------- */
-
-.moon-icon {
-    position: absolute;
-
-    width: 18px;
-    height: 18px;
-
-    border-radius: 50%;
-
-    background: #ddd;
-
-    box-shadow: 5px -3px 0 0 #fff;
-
-    transform: scale(0) rotate(-45deg);
-    opacity: 0;
-
-    transition:
-        transform 0.4s ease,
-        opacity 0.3s ease;
-}
-
-
-/* ---------- Dark mode button ---------- */
-
-body.dark #theme-toggle {
-    background: #1c1c1c;
-    border-color: #444;
-}
-
-body.dark #theme-toggle:hover {
-    background: #252525;
-}
-
-
-/* Hide sun in dark mode */
-
-body.dark .sun-icon {
-    transform: scale(0) rotate(90deg);
-    opacity: 0;
-}
-
-
-/* Show moon in dark mode */
-
-body.dark .moon-icon {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-}
-
-
-/* ---------- Dark theme ---------- */
-
-body.dark {
-    background: #121212;
-    color: #e6e6e6;
-}
-
-body.dark nav {
-    background: rgba(18,18,18,0.96);
-    border-bottom-color: #333;
-}
-
-body.dark .nav-name {
-    color: #e6e6e6;
-}
-
-body.dark nav a {
-    color: #aaa;
-}
-
-body.dark nav a:hover {
-    color: #6ea8ff;
-}
-
-body.dark .subtitle,
-body.dark .affiliation,
-body.dark .research-title {
-    color: #aaa;
-}
-
-body.dark h2 {
-    border-bottom-color: #333;
-}
-
-body.dark a {
-    color: #6ea8ff;
-}
-
-body.dark .research-intro {
-    color: #ccc;
-}
-
-body.dark .research-card {
-    background: #1b1b1b;
-    border-color: #333;
-}
-
-body.dark .research-card p {
-    color: #aaa;
-}
-
-body.dark .publication-authors,
-body.dark .publication-journal,
-body.dark .contact {
-    color: #aaa;
-}
-
-body.dark .cv-button {
-    border-color: #6ea8ff;
-    color: #6ea8ff;
-}
-
-body.dark .cv-button:hover {
-    background: #6ea8ff;
-    color: #121212;
-}
-
-body.dark footer {
-    border-top-color: #333;
-    color: #777;
-}
-    
-
-
-
-/* ---------- Dark Theme ---------- */
-
-body.dark {
-    background: #121212;
-    color: #e6e6e6;
-}
-
-body.dark nav {
-    background: rgba(18,18,18,0.96);
-    border-bottom-color: #333;
-}
-
-body.dark .nav-name {
-    color: #e6e6e6;
-}
-
-body.dark nav a {
-    color: #aaa;
-}
-
-body.dark nav a:hover {
-    color: #6ea8ff;
-}
-
-body.dark .subtitle,
-body.dark .affiliation,
-body.dark .research-title {
-    color: #aaa;
-}
-
-body.dark h2 {
-    border-bottom-color: #333;
-}
-
-body.dark a {
-    color: #6ea8ff;
-}
-
-body.dark .research-intro {
-    color: #ccc;
-}
-
-body.dark .research-card {
-    background: #1b1b1b;
-    border-color: #333;
-}
-
-body.dark .research-card p {
-    color: #aaa;
-}
-
-body.dark .publication-authors,
-body.dark .publication-journal,
-body.dark .contact {
-    color: #aaa;
-}
-
-body.dark .cv-button {
-    border-color: #6ea8ff;
-    color: #6ea8ff;
-}
-
-body.dark .cv-button:hover {
-    background: #6ea8ff;
-    color: #121212;
-}
-
-body.dark footer {
-    border-top-color: #333;
-    color: #777;
-}
-
-body.dark #theme-toggle {
-    border-color: #444;
-    color: #eee;
-}
-
-body.dark #theme-toggle:hover {
-    background: #292929;
-}
-
-    /* ---------- Navigation ---------- */
-    <nav>
-    <div class="nav-inner">
-
-        <div class="nav-name">
-            Manish Patel
-        </div>
-
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#cv">CV</a>
-            <a href="#contact">Contact</a>
-
-            <!-- Theme button -->
-            <button id="theme-toggle" aria-label="Toggle dark mode">
-                <span class="sun-icon"></span>
-                <span class="moon-icon"></span>
-            </button>
-
-        </div>
-
-    </div>
-</nav>
-    
-    
-
-    /* ---------- General ---------- */
-
-    section {
-        scroll-margin-top: 80px;
-        margin-bottom: 65px;
-    }
-
-    h1 {
-        font-size: 38px;
-        margin: 0 0 4px 0;
-        font-weight: 600;
-    }
-
-    h2 {
-        font-size: 25px;
-        font-weight: 500;
-        margin-bottom: 25px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #ddd;
-    }
-
-    h3 {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 7px;
-    }
-
-    p {
-        margin-top: 0;
-    }
-
-    a {
-        color: #1565c0;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    /* ---------- Hero ---------- */
-
-    .hero {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 50px;
-        margin-bottom: 70px;
-    }
-
-    .hero-text {
-        flex: 1;
-    }
-
-    .subtitle {
-        color: #555;
-        font-size: 18px;
-        margin: 2px 0;
-    }
-
-    .affiliation {
-        color: #666;
-        margin: 1px 0;
-        font-size: 15px;
-        line-height: 1.45;
-    }
-
-    .research-title {
-        margin-top: 20px;
-        color: #444;
-        font-size: 16px;
-    }
-
-    .profile-photo {
-        width: 165px;
-        height: 165px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
-
-    .links {
-        margin-top: 18px;
-    }
-
-    .links a {
-        margin-right: 16px;
-        font-size: 14px;
-    }
-
-    /* ---------- Research ---------- */
-
-    .research-intro {
-        font-size: 16px;
-        color: #444;
-        max-width: 900px;
-    }
-
-    .research-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-        margin-top: 30px;
-    }
-
-    .research-card {
-        padding: 20px 22px;
-        border: 1px solid #e5e5e5;
-        border-radius: 8px;
-        background: #fafafa;
-    }
-
-    .research-card h3 {
-        margin-top: 0;
-    }
-
-    .research-card p {
-        color: #555;
-        font-size: 14px;
-        margin-bottom: 0;
-    }
-
-    /* ---------- Research visual ---------- */
-
-    .research-visual {
-        display: flex;
-        align-items: center;
-        gap: 35px;
-        margin-top: 35px;
-    }
-
-    .research-visual-text {
-        flex: 1;
-    }
-
-    .research-video {
-        width: 230px;
-        border-radius: 7px;
-    }
-
-    /* ---------- Publications ---------- */
-
-    .publication {
-        margin-bottom: 23px;
-    }
-
-    .publication-title {
-        font-weight: 600;
-    }
-
-    .publication-authors {
-        color: #555;
-        font-size: 15px;
-    }
-
-    .publication-journal {
-        color: #444;
-        font-size: 14px;
-    }
-
-    .publication-links {
-        font-size: 14px;
-    }
-
-    /* ---------- CV ---------- */
-
-    .cv-button {
-        display: inline-block;
-        padding: 9px 18px;
-        border: 1px solid #1565c0;
-        border-radius: 5px;
-        color: #1565c0;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .cv-button:hover {
-        background: #1565c0;
-        color: white;
-        text-decoration: none;
-    }
-
-    /* ---------- Contact ---------- */
-
-    .contact {
-        color: #555;
-    }
-
-    /* ---------- Footer ---------- */
-
-    footer {
-        border-top: 1px solid #eee;
-        padding: 25px 0 35px;
-        margin-top: 70px;
-        color: #888;
-        font-size: 13px;
-    }
-
-    /* ---------- Mobile ---------- */
-
-    @media (max-width: 700px) {
 
         body {
-            padding: 0 18px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 25px;
+
+            color: #222;
+            background: #ffffff;
+
+            line-height: 1.65;
+            font-size: 16px;
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease;
         }
 
+        a {
+            color: #2457a6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
         nav {
-            margin-bottom: 35px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e5e5e5;
+
+            transition:
+                background 0.35s ease,
+                border-color 0.35s ease;
         }
 
         .nav-inner {
-            flex-direction: column;
-            gap: 8px;
+            max-width: 1000px;
+            margin: 0 auto;
+
+            padding: 14px 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
         }
 
-        nav a {
-            margin-left: 10px;
-            margin-right: 10px;
+        .nav-name {
+            font-weight: 600;
+            font-size: 17px;
+            color: #222;
+            white-space: nowrap;
         }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: #555;
+            font-size: 14px;
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2457a6;
+        }
+
+
+        /* =========================
+           THEME TOGGLE
+        ========================== */
+
+        #theme-toggle {
+            position: relative;
+
+            width: 48px;
+            height: 25px;
+
+            border: 1px solid #cfcfcf;
+            border-radius: 20px;
+
+            background: #f1f1f1;
+
+            cursor: pointer;
+
+            padding: 0;
+
+            transition:
+                background 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        #theme-toggle::before {
+            content: "";
+
+            position: absolute;
+
+            width: 19px;
+            height: 19px;
+
+            left: 3px;
+            top: 2px;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            box-shadow: 0 1px 4px rgba(0,0,0,0.20);
+
+            transition:
+                transform 0.35s ease,
+                background 0.35s ease;
+        }
+
+        .sun-icon,
+        .moon-icon {
+            position: absolute;
+
+            top: 50%;
+
+            width: 10px;
+            height: 10px;
+
+            transform: translateY(-50%);
+
+            pointer-events: none;
+        }
+
+        .sun-icon {
+            left: 8px;
+
+            border-radius: 50%;
+            background: #f2a900;
+        }
+
+        .moon-icon {
+            right: 8px;
+
+            border-radius: 50%;
+            background: #777;
+
+            opacity: 0.55;
+        }
+
+
+        /* =========================
+           HERO / ABOUT
+        ========================== */
 
         .hero {
-            flex-direction: column-reverse;
-            text-align: center;
-            gap: 25px;
+            display: flex;
+            align-items: center;
+
+            gap: 55px;
+
+            padding: 75px 0 65px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 600;
+
+            margin: 0 0 6px;
+
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            color: #666;
+            font-size: 18px;
+
+            margin: 0 0 3px;
+        }
+
+        .hero-affiliation {
+            color: #777;
+            font-size: 15px;
+
+            margin: 0;
+        }
+
+        .hero-links {
+            margin-top: 22px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .hero-links a {
+            font-size: 14px;
         }
 
         .profile-photo {
-            width: 140px;
-            height: 140px;
+            width: 175px;
+            height: 175px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 1px solid #ddd;
         }
 
-        h1 {
-            font-size: 32px;
+
+        /* =========================
+           SECTIONS
+        ========================== */
+
+        section {
+            padding: 55px 0;
+
+            border-top: 1px solid #eeeeee;
         }
+
+        section h2 {
+            font-size: 26px;
+            font-weight: 600;
+
+            margin: 0 0 25px;
+        }
+
+        section p {
+            color: #444;
+        }
+
+
+        /* =========================
+           RESEARCH CARDS
+        ========================== */
 
         .research-grid {
-            grid-template-columns: 1fr;
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+
+            margin-top: 25px;
         }
 
-        .research-visual {
-            flex-direction: column;
+        .research-card {
+            background: #f7f8fa;
+
+            border: 1px solid #e6e6e6;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.35s ease,
+                border-color 0.35s ease;
         }
+
+        .research-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 7px 20px rgba(0,0,0,0.07);
+        }
+
+        .research-card h3 {
+            margin: 0 0 10px;
+
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .research-card p {
+            margin: 0;
+
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        /* =========================
+           VIDEO
+        ========================== */
 
         .research-video {
             width: 100%;
-            max-width: 300px;
+
+            margin-top: 35px;
+
+            border-radius: 10px;
+
+            border: 1px solid #e5e5e5;
         }
-    }
-
-</style>
 
 
+        /* =========================
+           PUBLICATIONS
+        ========================== */
+
+        .publication {
+            margin-bottom: 28px;
+        }
+
+        .publication-title {
+            font-weight: 600;
+
+            font-size: 16px;
+
+            margin-bottom: 4px;
+        }
+
+        .publication-authors {
+            color: #555;
+
+            font-size: 14px;
+        }
+
+        .publication-journal {
+            color: #777;
+
+            font-size: 14px;
+
+            margin-top: 3px;
+        }
+
+        .publication-links {
+            margin-top: 5px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CV BUTTON
+        ========================== */
+
+        .cv-button {
+            display: inline-block;
+
+            padding: 9px 18px;
+
+            border: 1px solid #2457a6;
+
+            border-radius: 6px;
+
+            color: #2457a6;
+
+            font-size: 14px;
+
+            text-decoration: none;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .cv-button:hover {
+            background: #2457a6;
+            color: white;
+
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-list {
+            list-style: none;
+
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 9px;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 35px 0 45px;
+
+            border-top: 1px solid #eeeeee;
+
+            color: #888;
+
+            font-size: 13px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           DARK MODE
+        ========================== */
+
+        body.dark {
+            background: #151515;
+            color: #e8e8e8;
+        }
+
+        body.dark nav {
+            background: rgba(21, 21, 21, 0.95);
+            border-color: #303030;
+        }
+
+        body.dark .nav-name {
+            color: #eeeeee;
+        }
+
+        body.dark .nav-links a {
+            color: #bdbdbd;
+        }
+
+        body.dark .nav-links a:hover {
+            color: #82aef0;
+        }
+
+        body.dark .hero-subtitle {
+            color: #bdbdbd;
+        }
+
+        body.dark .hero-affiliation {
+            color: #999;
+        }
+
+        body.dark section {
+            border-color: #303030;
+        }
+
+        body.dark section p {
+            color: #c2c2c2;
+        }
+
+        body.dark .research-card {
+            background: #1e1e1e;
+            border-color: #333;
+        }
+
+        body.dark .research-card p {
+            color: #bdbdbd;
+        }
+
+        body.dark .publication-authors {
+            color: #bdbdbd;
+        }
+
+        body.dark .publication-journal {
+            color: #999;
+        }
+
+        body.dark footer {
+            border-color: #303030;
+            color: #777;
+        }
+
+        body.dark a {
+            color: #82aef0;
+        }
+
+        body.dark .cv-button {
+            border-color: #82aef0;
+            color: #82aef0;
+        }
+
+        body.dark .cv-button:hover {
+            background: #82aef0;
+            color: #151515;
+        }
+
+        body.dark #theme-toggle {
+            background: #303030;
+            border-color: #4a4a4a;
+        }
+
+        body.dark #theme-toggle::before {
+            transform: translateX(21px);
+            background: #222;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 0 18px;
+            }
+
+            .nav-inner {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 12px 0;
+            }
+
+            .nav-links {
+                width: 100%;
+
+                flex-wrap: wrap;
+
+                gap: 14px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+
+                align-items: flex-start;
+
+                gap: 25px;
+
+                padding: 50px 0;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 45px 0;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-<nav>
-    <div class="nav-inner">
+    <nav>
 
+        <div class="nav-inner">
 
-    <div class="nav-name">
-        Manish Patel
-    </div>
+            <div class="nav-name">
+                Manish Patel
+            </div>
 
-    <div>
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-    </div>
+            <div class="nav-links">
 
-</div>
+                <a href="#about">About</a>
 
+                <a href="#research">Research</a>
 
-</nav>
+                <a href="#publications">Publications</a>
 
-<!-- ================= ABOUT ================= -->
+                <a href="#cv">CV</a>
 
-<section id="about">
+                <a href="#contact">Contact</a>
 
-<div class="hero">
+                <button id="theme-toggle"
+                        aria-label="Toggle dark mode">
 
-    <div class="hero-text">
+                    <span class="sun-icon"></span>
+                    <span class="moon-icon"></span>
 
-        <h1>Manish Patel</h1>
+                </button>
 
-        <p class="subtitle">
-            PhD Scholar in Physics
-        </p>
-
-        <p class="affiliation">
-            Institute of Physics, Bhubaneswar
-        </p>
-
-        <p class="affiliation">
-            Homi Bhabha National Institute, Mumbai
-        </p>
-
-        <p class="research-title">
-            <strong>Research:</strong>
-            Active Matter · Nonequilibrium Statistical Physics ·
-            Stochastic Dynamics
-        </p>
-
-        <div class="links">
-
-            <a href="mailto:manish.patel@iopb.res.in">
-                Email
-            </a>
-
-            <a href="https://orcid.org/0009-0000-3323-0492"
-               target="_blank">
-                ORCID
-            </a>
-
-            <a href="https://scholar.google.com/citations?user=YzOyi4gAAAAJ&hl=en"
-               target="_blank">
-                Google Scholar
-            </a>
-
-            <a href="https://arxiv.org/search/cond-mat?searchtype=author&query=Patel,+M"
-               target="_blank">
-                arXiv
-            </a>
+            </div>
 
         </div>
 
-    </div>
+    </nav>
 
 
-    <img src="manish_pic.jpeg"
-         alt="Manish Patel"
-         class="profile-photo">
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
-</div>
+    <main>
 
+        <section id="about" style="border-top: none;">
 
-<p>
-    I work on stochastic dynamics, active matter, and
-    nonequilibrium statistical physics, with a particular
-    interest in the dynamics and thermodynamics of active particles.
-    My research combines analytical theory, stochastic dynamics,
-    numerical simulations, and physically motivated modeling to
-    understand transport, fluctuations, and dynamical transitions
-    in systems far from equilibrium.
-</p>
+            <div class="hero">
 
+                <div class="hero-text">
 
-</section>
+                    <h1>Manish Patel</h1>
 
-<!-- ================= RESEARCH ================= -->
+                    <p class="hero-subtitle">
+                        PhD Scholar in Physics
+                    </p>
 
-<section id="research">
+                    <p class="hero-affiliation">
+                        Institute of Physics, Bhubaneswar<br>
+                        Homi Bhabha National Institute, Mumbai
+                    </p>
 
-<h2>Research</h2>
+                    <div class="hero-links">
 
-<p class="research-intro">
-    A central theme of my research is to understand how activity,
-    inertia, interactions, confinement, and competing dynamical
-    timescales shape the behavior of nonequilibrium systems.
-    I am particularly interested in phenomena that have no direct
-    equilibrium analogue and in developing analytical and
-    computational approaches to describe them quantitatively.
-</p>
+                        <a href="mailto:manish.patel@iopb.res.in">
+                            Email
+                        </a>
 
+                        <a href="https://orcid.org/0009-0000-3323-0492"
+                           target="_blank">
+                            ORCID
+                        </a>
 
-<div class="research-grid">
+                        <a href="https://scholar.google.com/citations?user=YzOyi4gAAAAJ&hl=en"
+                           target="_blank">
+                            Google Scholar
+                        </a>
 
-    <div class="research-card">
+                        <a href="https://arxiv.org/search/cond-mat?searchtype=author&query=Patel,+M"
+                           target="_blank">
+                            arXiv
+                        </a>
 
-        <h3>01 · Active Matter</h3>
+                    </div>
 
-        <p>
-            Dynamics and transport of active Brownian particles,
-            active chains, and interacting active systems, with
-            emphasis on activity-induced transitions and anomalous
-            transport.
-        </p>
+                </div>
 
-    </div>
 
+                <img
+                    src="manish_pic.jpeg"
+                    alt="Manish Patel"
+                    class="profile-photo"
+                >
 
-    <div class="research-card">
+            </div>
 
-        <h3>02 · Stochastic Dynamics</h3>
 
-        <p>
-            Exact and analytical approaches to stochastic
-            nonequilibrium dynamics, including higher-order moments,
-            non-Gaussian fluctuations, and dynamical crossovers.
-        </p>
+            <p>
+                I work in nonequilibrium statistical physics, with a focus
+                on the stochastic dynamics and thermodynamics of active
+                matter. My research combines analytical approaches and
+                computational simulations to investigate transport,
+                fluctuations, interactions, and dynamical transitions in
+                active systems.
+            </p>
 
-    </div>
+        </section>
 
 
-    <div class="research-card">
+        <!-- =========================
+             RESEARCH
+        ========================== -->
 
-        <h3>03 · Inertia & Activity</h3>
+        <section id="research">
 
-        <p>
-            Understanding how inertia and activity
-            effect dynamics and steady-state
-            properties of active particles.
-        </p>
+            <h2>Research</h2>
 
-    </div>
+            <p>
+                My research focuses on understanding emergent dynamics and
+                nonequilibrium phenomena in active and stochastic systems.
+                Current interests include active matter, stochastic
+                thermodynamics, and biological systems.
+            </p>
 
 
-    <div class="research-card">
+            <div class="research-grid">
 
-        <h3>04 · Nonequilibrium Transport</h3>
 
-        <p>
-            Diffusion, non-reciprocal interactions, and competing
-            active and thermal driving in systems far from equilibrium,
-            with connections to biological and soft-matter systems.
-        </p>
+                <div class="research-card">
 
-    </div>
+                    <h3>
+                        01 · Active Matter
+                    </h3>
 
-</div>
+                    <p>
+                        Dynamics and transport of active Brownian particles,
+                        active chains, and interacting active systems, with
+                        emphasis on activity-induced transitions and
+                        anomalous transport.
+                    </p>
 
+                </div>
 
-<div class="research-visual">
 
-    <div class="research-visual-text">
+                <div class="research-card">
 
-        <p>
-            My work spans single-particle dynamics to interacting
-            many-body systems, with an emphasis on identifying the
-            physical mechanisms responsible for emergent transport
-            and fluctuations.
-        </p>
+                    <h3>
+                        02 · Stochastic Dynamics
+                    </h3>
 
-        <p>
-            I am also interested in extending these ideas toward
-            biological physics, particularly cell and tissue dynamics,
-            where persistent motion, fluctuations, non-reciprocal
-            interactions, and nonequilibrium driving are intrinsic
-            features of living systems.
-        </p>
+                    <p>
+                        Stochastic processes, resetting, fluctuations, and
+                        inertial effects in nonequilibrium systems, with
+                        particular interest in exact analytical results.
+                    </p>
 
-    </div>
+                </div>
 
 
-    <video class="research-video"
-           autoplay
-           loop
-           muted
-           playsinline>
+                <div class="research-card">
 
-        <source src="active_particles.mp4"
-                type="video/mp4">
+                    <h3>
+                        03 · Nonequilibrium Physics
+                    </h3>
 
-        Your browser does not support the video tag.
+                    <p>
+                        Transport, entropy production, fluctuation relations,
+                        and effective interactions in systems driven away
+                        from thermal equilibrium.
+                    </p>
 
-    </video>
+                </div>
 
-</div>
 
+                <div class="research-card">
 
-</section>
+                    <h3>
+                        04 · Biological Physics
+                    </h3>
 
-<!-- ================= PUBLICATIONS ================= -->
+                    <p>
+                        Applying theoretical and computational approaches to
+                        biological systems, with an interest in cell and
+                        tissue dynamics and close connections between models
+                        and experiments.
+                    </p>
 
-<section id="publications">
+                </div>
 
+            </div>
 
-<h2> Publications & Manuscripts</h2>
 
+            <video
+                class="research-video"
+                autoplay
+                muted
+                loop
+                playsinline>
 
-<div class="publication">
+                <source
+                    src="active_particles.mp4"
+                    type="video/mp4">
 
-    <div class="publication-title">
-        <em>Non-monotonic diffusion from nonequilibrium driving</em>
-    </div>
+                Your browser does not support the video tag.
 
-    <div class="publication-authors">
-        <strong>Manish Patel</strong>, Ritwick Sarkar,
-        Urna Basu, Debasish Chaudhuri
-    </div>
+            </video>
 
-    <div class="publication-links">
-        <a href="https://arxiv.org/abs/2607.25902"
-           target="_blank">
-            arXiv:2607.25902
-        </a>
-        · 2026
-    </div>
+        </section>
 
-</div>
 
+        <!-- =========================
+             PUBLICATIONS
+        ========================== -->
 
-<div class="publication">
+        <section id="publications">
 
-    <div class="publication-title">
-        <em>
-            Crossover dynamics and non-Gaussian fluctuations
-            in inertial active chains
-        </em>
-    </div>
+            <h2>Publications</h2>
 
-    <div class="publication-authors">
-        <strong>Manish Patel</strong>, Subhajit Paul,
-        Debasish Chaudhuri
-    </div>
 
-    <div class="publication-journal">
-        <em>J. Chem. Phys.</em>
-        <strong>164</strong>, 134110 (2026)
-    </div>
+            <div class="publication">
 
-    <div class="publication-links">
-        <a href="https://doi.org/10.1063/5.0321684"
-           target="_blank">
-            DOI
-        </a>
-    </div>
+                <div class="publication-title">
+                    Non-monotonic diffusion from nonequilibrium driving
+                </div>
 
-</div>
+                <div class="publication-authors">
+                    Manish Patel, Ritwick Sarkar, Urna Basu,
+                    Debasish Chaudhuri
+                </div>
 
+                <div class="publication-journal">
+                    arXiv:2607.25902 (2026)
+                </div>
 
-<div class="publication">
+                <div class="publication-links">
+                    <a href="https://arxiv.org/abs/2607.25902"
+                       target="_blank">
+                        arXiv
+                    </a>
+                </div>
 
-    <div class="publication-title">
-        <em>
-            Controlling inertial active Brownian motion
-            via stochastic resetting
-        </em>
-    </div>
+            </div>
 
-    <div class="publication-authors">
-        <strong>Manish Patel</strong>, Amir Shee
-    </div>
 
-    <div class="publication-links">
-        <a href="https://arxiv.org/abs/2602.21134"
-           target="_blank">
-            arXiv:2602.21134
-        </a>
-        · 2026
-    </div>
+            <div class="publication">
 
-</div>
+                <div class="publication-title">
+                    Crossover dynamics and non-Gaussian fluctuations
+                    in inertial active chains
+                </div>
 
+                <div class="publication-authors">
+                    Manish Patel, Subhajit Paul,
+                    Debasish Chaudhuri
+                </div>
 
-<div class="publication">
+                <div class="publication-journal">
+                    Journal of Chemical Physics 164, 134110 (2026)
+                </div>
 
-    <div class="publication-title">
-        <em>
-            Interplay of activity and non-reciprocity in
-            tracer dynamics: From non-equilibrium
-            fluctuation-dissipation to giant diffusion
-        </em>
-    </div>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1063/5.0321684"
+                       target="_blank">
+                        DOI
+                    </a>
+                </div>
 
-    <div class="publication-authors">
-        Subhajit Paul, <strong>Manish Patel</strong>,
-        Debasish Chaudhuri
-    </div>
+            </div>
 
-    <div class="publication-links">
-        <a href="https://arxiv.org/abs/2601.03591"
-           target="_blank">
-            arXiv:2601.03591
-        </a>
-        · 2026
-    </div>
 
-</div>
+            <div class="publication">
 
+                <div class="publication-title">
+                    Controlling inertial active Brownian motion via
+                    stochastic resetting
+                </div>
 
-<div class="publication">
+                <div class="publication-authors">
+                    Manish Patel, Amir Shee
+                </div>
 
-    <div class="publication-title">
-        <em>
-            Dynamical metastability and re-entrant localization
-            of trapped active elements with speed and
-            orientation fluctuations
-        </em>
-    </div>
+                <div class="publication-journal">
+                    arXiv:2602.21134 (2026)
+                </div>
 
-    <div class="publication-authors">
-        <strong>Manish Patel</strong>, Amir Shee,
-        Debasish Chaudhuri
-    </div>
+                <div class="publication-links">
+                    <a href="https://arxiv.org/abs/2602.21134"
+                       target="_blank">
+                        arXiv
+                    </a>
+                </div>
 
-    <div class="publication-journal">
-        <em>Phys. Rev. Research</em>
-        <strong>7</strong>, 013126 (2025)
-    </div>
+            </div>
 
-    <div class="publication-links">
-        <a href="https://doi.org/10.1103/PhysRevResearch.7.013126"
-           target="_blank">
-            DOI
-        </a>
-    </div>
 
-</div>
+            <div class="publication">
 
+                <div class="publication-title">
+                    Interplay of activity and non-reciprocity in tracer
+                    dynamics: From non-equilibrium fluctuation-dissipation
+                    to giant diffusion
+                </div>
 
-<div class="publication">
+                <div class="publication-authors">
+                    Subhajit Paul, Manish Patel,
+                    Debasish Chaudhuri
+                </div>
 
-    <div class="publication-title">
-        <em>
-            Exact moments for trapped active particles:
-            inertial impact on steady-state properties
-            and re-entrance
-        </em>
-    </div>
+                <div class="publication-journal">
+                    arXiv:2601.03591 (2026)
+                </div>
 
-    <div class="publication-authors">
-        <strong>Manish Patel</strong>, Debasish Chaudhuri
-    </div>
+                <div class="publication-links">
+                    <a href="https://arxiv.org/abs/2601.03591"
+                       target="_blank">
+                        arXiv
+                    </a>
+                </div>
 
-    <div class="publication-journal">
-        <em>New J. Phys.</em>
-        <strong>26</strong>, 073048 (2024)
-    </div>
+            </div>
 
-    <div class="publication-links">
-        <a href="https://doi.org/10.1088/1367-2630/ad6349"
-           target="_blank">
-            DOI
-        </a>
-    </div>
 
-</div>
+            <div class="publication">
 
+                <div class="publication-title">
+                    Dynamical metastability and re-entrant localization
+                    of trapped active elements with speed and orientation
+                    fluctuations
+                </div>
 
-<div class="publication">
+                <div class="publication-authors">
+                    Manish Patel, Amir Shee, Debasish Chaudhuri
+                </div>
 
-    <div class="publication-title">
-        <em>
-            Exact moments and re-entrant transitions in
-            the inertial dynamics of active Brownian particles
-        </em>
-    </div>
+                <div class="publication-journal">
+                    Physical Review Research 7, 013126 (2025)
+                </div>
 
-    <div class="publication-authors">
-        <strong>Manish Patel</strong>, Debasish Chaudhuri
-    </div>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1103/PhysRevResearch.7.013126"
+                       target="_blank">
+                        DOI
+                    </a>
+                </div>
 
-    <div class="publication-journal">
-        <em>New J. Phys.</em>
-        <strong>25</strong>, 123048 (2023)
-    </div>
+            </div>
 
-    <div class="publication-links">
-        <a href="https://doi.org/10.1088/1367-2630/ad1538"
-           target="_blank">
-            DOI
-        </a>
-    </div>
 
-</div>
+            <div class="publication">
 
+                <div class="publication-title">
+                    Exact moments for trapped active particles:
+                    inertial impact on steady-state properties and re-entrance
+                </div>
 
-</section>
+                <div class="publication-authors">
+                    Manish Patel, Debasish Chaudhuri
+                </div>
 
-<!-- ================= CV ================= -->
+                <div class="publication-journal">
+                    New Journal of Physics 26, 073048 (2024)
+                </div>
 
-<section id="cv">
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1088/1367-2630/ad6349"
+                       target="_blank">
+                        DOI
+                    </a>
+                </div>
 
+            </div>
 
-<h2>Curriculum Vitae</h2>
 
-<p>
-    For a complete overview of my academic background,
-    research experience, publications, and presentations:
-</p>
+            <div class="publication">
 
-<a class="cv-button"
-   href="cv_academic.pdf">
-    View / Download CV
-</a>
+                <div class="publication-title">
+                    Exact moments and re-entrant transitions in the
+                    inertial dynamics of active Brownian particles
+                </div>
 
+                <div class="publication-authors">
+                    Manish Patel, Debasish Chaudhuri
+                </div>
 
-</section>
+                <div class="publication-journal">
+                    New Journal of Physics 25, 123048 (2023)
+                </div>
 
-<!-- ================= CONTACT ================= -->
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1088/1367-2630/ad1538"
+                       target="_blank">
+                        DOI
+                    </a>
+                </div>
 
-<section id="contact">
+            </div>
 
+        </section>
 
-<h2>Contact</h2>
 
-<p class="contact">
-    Institute of Physics, Bhubaneswar
-</p>
+        <!-- =========================
+             CV
+        ========================== -->
 
-<p class="contact">
-    Email:
-    <a href="mailto:manish.patel@iopb.res.in">
-        manish.patel@iopb.res.in
-    </a>
-</p>
+        <section id="cv">
 
+            <h2>Curriculum Vitae</h2>
 
-</section>
+            <p>
+                A detailed overview of my academic background, research
+                experience, publications, and other professional activities
+                is available in my CV.
+            </p>
 
-<footer>
+            <a
+                class="cv-button"
+                href="cv_academic.pdf"
+                target="_blank">
 
-© 2026 Manish Patel · Physics
+                View CV
 
+            </a>
 
-</footer>
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <ul class="contact-list">
+
+                <li>
+                    <strong>Email:</strong>
+                    <a href="mailto:manish.patel@iopb.res.in">
+                        manish.patel@iopb.res.in
+                    </a>
+                </li>
+
+                <li>
+                    <strong>Institute:</strong>
+                    Institute of Physics, Bhubaneswar
+                </li>
+
+                <li>
+                    <strong>Affiliation:</strong>
+                    Homi Bhabha National Institute, Mumbai
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Manish Patel
+
+    </footer>
+
+
+    <!-- =========================
+         THEME JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const toggle = document.getElementById("theme-toggle");
+
+        const savedTheme = localStorage.getItem("theme");
+
+
+        /* Load saved theme */
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add("dark");
+
+        }
+
+
+        /* Toggle theme */
+
+        toggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark");
+
+
+            if (document.body.classList.contains("dark")) {
+
+                localStorage.setItem("theme", "dark");
+
+            } else {
+
+                localStorage.setItem("theme", "light");
+
+            }
+
+        });
+
+    </script>
 
 </body>
+
 </html>
