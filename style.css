@@ -24,7 +24,7 @@ body {
 }
 
 .photo-gallery img {
-  width: 10%;
+  width: 0.1%;
   height: auto;
   object-fit: contain;
   border-radius: 5px;
